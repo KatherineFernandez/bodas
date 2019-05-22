@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wedding Planning</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+
+<body>
+
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+	<script>
+		// Initialize Firebase
+		// TODO: Replace with your project's customized code snippet
+		var config = {
+			apiKey: "AIzaSyDTua7F3t3NBJSQcUm_nVAYT2ViT2hFCmE",
+			authDomain: "bdbodas-6abf1.firebaseapp.com",
+			databaseURL: "https://bdbodas-6abf1.firebaseio.com",
+			projectId: "bdbodas-6abf1",
+			storageBucket: "bdbodas-6abf1.appspot.com",
+			messagingSenderId: "357037616157",
+		};
+		firebase.initializeApp(config);
+	</script>
+
+
+
+
+	<!--======================================== Boton ir arriba ========================================-->
+	<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
+	<!--======================================== Navegación ========================================-->
+	<header class="full-reset header">
+		<!--======================================== Logo(Nombre INS) ========================================-->
+		<div class="full-reset logo">
+			<span class="hidden-lg hidden-md">Bodas Tec</span>
+			<span class="hidden-xs hidden-sm">Bodas Tec</span>
+		</div>
+		<!--======================================== Links de navegación ========================================-->
+		<nav class="full-reset navigation">
+			<ul class="full-reset list-unstyled">
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="organizador.html">Organizador</a></li>
+				<li><a href="proovedores.html">Proveedores</a></li>
+				<li><a href="galeria.html">Galería</a></li>
+				<li><a href="registro.html">Registro</a></li>
+				<li><a href="login.html">Accede</a></li>
+				<li><a href="#" class="btm-mega-menu">Más &nbsp;<i class="fa fa-caret-down"></i></a></li>
+			</ul>
+		</nav>
+
+
+		<!--======================================== Mega menu ========================================-->
+		<div class="full-reset mega-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4">
+						<span class="full-reset titles">Recursos</span>
+						<ul class="list-unstyled full-reset">
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-search"></i>&nbsp; Buscar en
+									GOOGLE</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-graduation-cap"></i>&nbsp;
+									Plataforma (MOODLE)</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<span class="full-reset titles">Enlaces importantes</span>
+						<ul class="list-unstyled full-reset">
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-university"></i>&nbsp; MINED</a>
+							</li>
+							<li><a href="#!"><i class="fa fa-paw"></i>&nbsp; ARA-MACAO</a></li>
+							<li><a href="#!"><i class="fa fa-globe"></i>&nbsp; JOVENES A.T.T</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-flask"></i>&nbsp;
+									UNIVERSIDADES</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-gavel"></i>&nbsp; GOBIERNO</a>
+							</li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<span class="full-reset titles">Archivos</span>
+						<ul class="list-unstyled full-reset">
+							<li><a href="#!"><i class="fa fa-star-o"></i>&nbsp; Promociones INS</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-file-text-o"></i>&nbsp; Const. de
+									conducta</a></li>
+							<li><a href="#!"><i class="fa fa-download"></i>&nbsp; Descargas</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<i class="fa fa-times-circle btm-mega-menu close-mega-menu fa-2x"></i>
+		</div>
+	
+		<!--======================================== Boton menu mobil ========================================-->
+		<a href="#" class=" hidden-sm hidden-md hidden-lg pull-right button-menu-mobile show-close-menu-m"><i
+				class="fa fa-ellipsis-v"></i></a>
+
+	</header>
+	<!--======================================== fotos con funcionalidad ========================================-->
+	<section class="events-ins">
+		<div class="container-fluid">
+			<h2 class="text-center titles">ORGANIZADOR</h2>
+			<br><br>
+			<div class="row">
+				<!-- Agenda -->
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex ">
+									<a href="agenda.html"><img src="assets/img/iconos/agenda.png" class="arreglo" alt="Default"></a>
+									<h2> Agenda</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!--Calendario -->
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<a href="invitado.html"><img src="assets/img/iconos/invotado.png" class="arreglo" alt="Default"></a>
+									<h2> Invitado</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!-- Mesas-->
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<img src="assets/img/iconos/mesa.png" class="arreglo" alt="Default">
+									<h2> Mesa</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<!-- Editar -->
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<img src="assets/img/iconos/presupuesto.png" class="arreglo" alt="Default">
+									<h2> Presupuesto</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<img src="assets/img/iconos/diaboda.jpeg" class="arreglo" alt="Default">
+									<h2> Día Boda</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<a href="calendario.html"><img src="assets/img/iconos/calendario.png" class="arreglo" alt="Default"></a>
+									<h2> Calendario</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<a href="cuentaregresiva.html"><img src="assets/img/iconos/cuentaregre.jpeg" class="arreglo" alt="Default"></a>
+									<h2> Cuenta Regresiva</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<img src="assets/img/iconos/editar.png" class="arreglo" alt="Default">
+									<h2> Editar</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+				<article class="col-xs-12 col-sm-6 col-md-4">
+					<div id="escritorio">
+						<div class="row">
+							<div class="col-xs-12 col-sm-6 col-md-3">
+								<div class="item d-flex">
+									<img src="assets/img/iconos/idea.png" class="arreglo" alt="Default">
+									<h2> Ideas Boda</h2>
+								</div>
+							</div>
+						</div>
+					</div>
+				</article>
+			</div>
+	</section>
+
+	<!--fin menu escritorio -->
+
+
+	<!--======================================== Pie de pagina ========================================-->
+	<footer class="full-reset footer">
+		<div class="full-reset" style="padding: 15px 0;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4">
+						<h4 class="titles text-center">Visitenos en</h4>
+						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<h4 class="titles text-center">Contactenos</h4>
+						<p class="text-center">Tele-Fax: +(000)0000-0000 <br>Correo Electrónico: correo@hotmail.com</p>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<h4 class="titles subtitles-footer">Siguenos en</h4>
+						<ul class="list-unstyled links-footer">
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-facebook"></i> &nbsp; Facebook</a>
+							</li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-twitter"></i> &nbsp; Twitter</a>
+							</li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-google-plus"></i> &nbsp;
+									Google+</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12">
+						<div class="full-reset footer-copyright"><i class="fa fa-copyright"></i> 2018 Katherine
+							Fernandez</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+</body>
+
+</html>

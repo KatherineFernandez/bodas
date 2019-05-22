@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wedding Planning</title>
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/style.css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+	<script src="js/modernizr.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/main.js"></script>
+</head>
+<body>
+
+	<script src="https://www.gstatic.com/firebasejs/5.9.1/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  // TODO: Replace with your project's customized code snippet
+  var config = {
+    apiKey: "AIzaSyDTua7F3t3NBJSQcUm_nVAYT2ViT2hFCmE",
+    authDomain: "bdbodas-6abf1.firebaseapp.com",
+    databaseURL: "https://bdbodas-6abf1.firebaseio.com",
+    projectId: "bdbodas-6abf1",
+    storageBucket: "bdbodas-6abf1.appspot.com",
+    messagingSenderId: "357037616157",
+  };
+  firebase.initializeApp(config);
+</script>
+
+
+
+
+	<!--======================================== Boton ir arriba ========================================-->
+	<i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
+	<!--======================================== Navegación ========================================-->
+	<header class="full-reset header">
+		<!--======================================== Logo(Nombre INS) ========================================-->
+		<div class="full-reset logo">
+			<span class="hidden-lg hidden-md">Planificador de bodas</span>
+			<span class="hidden-xs hidden-sm">Wedding Planning</span>
+		</div>
+		<!--======================================== Links de navegación ========================================-->
+        <nav class="full-reset navigation">
+                <ul class="full-reset list-unstyled">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="organizador.html">Organizador</a></li>
+                    <li><a href="proovedores.html">Proveedores</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="prueba.html">Registro</a></li>
+                    <li><a href="login.html">Accede</a></li>
+                    <li><a href="#" class="btm-mega-menu">Más &nbsp;<i class="fa fa-caret-down"></i></a></li>
+                </ul>
+            </nav>
+		<!--======================================== Mega menu ========================================-->
+		<div class="full-reset mega-menu">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4">
+						<span class="full-reset titles">Recursos</span>
+						<ul class="list-unstyled full-reset">
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-search"></i>&nbsp; Buscar en GOOGLE</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-graduation-cap"></i>&nbsp; Plataforma (MOODLE)</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<span class="full-reset titles">Enlaces importantes</span>
+						<ul class="list-unstyled full-reset">
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-university"></i>&nbsp; MINED</a></li>
+							<li><a href="#!"><i class="fa fa-paw"></i>&nbsp; ARA-MACAO</a></li>
+							<li><a href="#!"><i class="fa fa-globe"></i>&nbsp; JOVENES A.T.T</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-flask"></i>&nbsp; UNIVERSIDADES</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-gavel"></i>&nbsp; GOBIERNO</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<span class="full-reset titles">Archivos</span>
+						<ul class="list-unstyled full-reset">
+							<li><a href="#!"><i class="fa fa-star-o"></i>&nbsp; Promociones INS</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-file-text-o"></i>&nbsp; Const. de conducta</a></li>
+							<li><a href="#!"><i class="fa fa-download"></i>&nbsp; Descargas</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<i class="fa fa-times-circle btm-mega-menu close-mega-menu fa-2x"></i>
+		</div>
+		<!--======================================== Boton menu mobil ========================================-->
+		<a href="#" class=" hidden-sm hidden-md hidden-lg pull-right button-menu-mobile show-close-menu-m"><i class="fa fa-ellipsis-v"></i></a>
+	</header>
+
+	<!--======================================== Enlaces importantes ========================================-->
+	<section class="text-center important-links-index" name="login" id="login">
+		<h2 class="titles">LOGIN</h2>
+
+
+		<a href="#!" class="open-link-newTab">
+		
+			<p>PHOTO</p>
+		</a>
+		<br>
+		
+		<form method="post">
+		<input type="text" id="email" placeholder=" Username" style="border-radius: 10px;"> <br> <br>
+		<input type="text" id="pass" placeholder=" Password" style="border-radius: 10px;"><br>
+		
+		<p style="font-size:  10px; color:darkgreen;">Olvidaste tu contraseña?</p> 
+
+		<br> 
+		<input type="button" value="submit" onclick="login()" style="border-radius: 10px; background-color: #00796b; color:blanchedalmond; padding: 10px;"> <br><br>
+		<p style="font-size:  15px; color:darkgreen;">No tienes cuenta? Registrate</p> 
+		
+
+		</form>	
+
+		<script type="text/javascript">
+			
+
+
+
+			function login(){
+				var email = document.getElementById("email").value;
+			var pass = document.getElementById("pass").value;
+				console.log(email, pass);
+				firebase.auth().signInWithEmailAndPassword(email, pass).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  console.log(errorCode);
+  // ...
+}).then(function(res){
+	firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+    var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    console.log(email);
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+});
+			}
+
+
+			function signout() {
+				firebase.auth().signOut().then(function() {
+  // Sign-out successful.
+}, function(error) {
+  // An error happened.
+});
+			}
+			
+		</script>
+		
+
+
+		<a href="#!" class="open-link-newTab">
+			<i class="fa fa-file-text-o"></i>
+			<p>Registrate</p>
+		</a>
+
+		<a href="#!" class="open-link-newTab">
+			<i class="fa fa-facebook"></i>
+			<p>Conecta con</p>
+		</a>
+	</section>
+	<!--======================================== Pie de pagina ========================================-->
+	<footer class="full-reset footer">
+		<div class="full-reset" style="padding: 15px 0;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-4">
+						<h4 class="titles text-center">Visitenos en</h4>
+						<p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<h4 class="titles text-center">Contactenos</h4>
+						<p class="text-center">Tele-Fax: +(000)0000-0000 <br>Correo Electrónico: correo@hotmail.com</p>
+					</div>
+					<div class="col-xs-12 col-sm-4">
+						<h4 class="titles subtitles-footer">Siguenos en</h4>
+						<ul class="list-unstyled links-footer">
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-facebook"></i> &nbsp; Facebook</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-twitter"></i> &nbsp; Twitter</a></li>
+							<li><a href="#!" class="open-link-newTab"><i class="fa fa-google-plus"></i> &nbsp; Google+</a></li>
+						</ul>
+					</div>
+					<div class="col-xs-12">
+						<div class="full-reset footer-copyright"><i class="fa fa-copyright"></i> 2018 Katherine Fernandez</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	
+</body>
+</html>

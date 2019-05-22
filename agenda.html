@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Calendario</title>
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.11.2.min.js"><\/script>')</script>
+    <script src="js/modernizr.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+    <script>
+        // Initialize Firebase
+        // TODO: Replace with your project's customized code snippet
+        var config = {
+            apiKey: "AIzaSyDTua7F3t3NBJSQcUm_nVAYT2ViT2hFCmE",
+            authDomain: "bdbodas-6abf1.firebaseapp.com",
+            databaseURL: "https://bdbodas-6abf1.firebaseio.com",
+            projectId: "bdbodas-6abf1",
+            storageBucket: "bdbodas-6abf1.appspot.com",
+            messagingSenderId: "357037616157",
+        };
+        firebase.initializeApp(config);
+
+        var db = firebase.firestore();
+
+        firebase.auth().onAuthStateChanged(function (user) {
+            if (user) {
+                // User is signed in.
+                var displayName = user.displayName;
+                var email = user.email;
+                var emailVerified = user.emailVerified;
+                var photoURL = user.photoURL;
+                var isAnonymous = user.isAnonymous;
+                var uid = user.uid;
+                var providerData = user.providerData;
+                console.log(email);
+                // ...
+            } else {
+                // User is signed out.
+                // ...
+            }
+        });
+    </script>
+    <!--======================================== Boton ir arriba ========================================-->
+    <i class="btn-up fa fa-arrow-circle-o-up hidden-xs"></i>
+    <!--======================================== Navegación ========================================-->
+    <header class="full-reset header">
+        <!--======================================== Logo(Nombre INS) ========================================-->
+        <div class="full-reset logo">
+            <span class="hidden-lg hidden-md">Bodas Tec</span>
+            <span class="hidden-xs hidden-sm">Agenda</span>
+        </div>
+        <!--======================================== Links de navegación ========================================-->
+        <nav class="full-reset navigation">
+            <ul class="full-reset list-unstyled">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="organizador.html">Organizador</a></li>
+                <li><a href="proovedores.html">Proveedores</a></li>
+                <li><a href="galeria.html">Galería</a></li>
+                <li><a href="prueba.html">Registro</a></li>
+                <li><a href="login.html">Accede</a></li>
+                <li><a href="#" class="btm-mega-menu">Más &nbsp;<i class="fa fa-caret-down"></i></a></li>
+            </ul>
+        </nav>
+        <!--======================================== Mega menu ========================================-->
+        <div class="full-reset mega-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="full-reset titles">Recursos educativos</span>
+                        <ul class="list-unstyled full-reset">
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-search"></i>&nbsp; Buscar en
+                                    GOOGLE</a></li>
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-graduation-cap"></i>&nbsp;
+                                    Plataforma (MOODLE)</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="full-reset titles">Enlaces importantes</span>
+                        <ul class="list-unstyled full-reset">
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-university"></i>&nbsp; MINED</a>
+                            </li>
+                            <li><a href="#!"><i class="fa fa-paw"></i>&nbsp; ARA-MACAO</a></li>
+                            <li><a href="#!"><i class="fa fa-globe"></i>&nbsp; JOVENES A.T.T</a></li>
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-flask"></i>&nbsp;
+                                    UNIVERSIDADES</a></li>
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-gavel"></i>&nbsp; GOBIERNO</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <span class="full-reset titles">Archivos</span>
+                        <ul class="list-unstyled full-reset">
+                            <li><a href="#!"><i class="fa fa-star-o"></i>&nbsp; Promociones INS</a></li>
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-file-text-o"></i>&nbsp; Const. de
+                                    conducta</a></li>
+                            <li><a href="#!"><i class="fa fa-download"></i>&nbsp; Descargas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <i class="fa fa-times-circle btm-mega-menu close-mega-menu fa-2x"></i>
+        </div>
+        <!--======================================== Boton menu mobil ========================================-->
+        <a href="#" class=" hidden-sm hidden-md hidden-lg pull-right button-menu-mobile show-close-menu-m"><i
+                class="fa fa-ellipsis-v"></i></a>
+    </header>
+    <!--======================================== Logo & Lema ========================================-->
+    <section class="full-reset font-cover" style="background-image: url(assets/img/imagen7.jpg);">
+        <div class="full-reset" style="height: 100%; padding: 60px 0;">
+            <h1 class="text-center titles"></h1>
+            <figure class="Logo-Ins-Index"><br>
+                <br>
+                <br>
+                <br>
+
+            </figure>
+        </div>
+    </section>
+    <div class="divider-general"></div>
+    <!--======================================== contenido de la pagina ========================================-->
+    <section class="full-reset" style="background-color: #fff; padding: 20px 0;">
+        <div class="container">
+            <div class="row">
+                <section class="col-xs-12 col-sm-8 col-md-9 info-section-ins">
+                  
+
+                    <article class="full-reset" id="ubicacion-ins">
+                        <div class="form-style-5">
+                            <form method="post">
+                                <fieldset>
+                                    <legend><span class="number">1</span> Ingrese Datos de la tarea </legend>
+                                    <input type="text" id="nombreTarea" name="field1"
+                                        placeholder="Nombre de la tarea *">
+                                    <input type="date" id="fecha" name="field2">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <input type="button" value="Registrar" onclick="signup()">
+                                </fieldset>
+                            </form>
+                        </div>
+                        <style type="text/css">
+                            .form-style-5 {
+                                max-width: 500px;
+                                padding: 10px 20px;
+                                background: #f4f7f8;
+                                margin: 10px auto;
+                                padding: 20px;
+                                background: #f4f7f8;
+                                border-radius: 8px;
+                                font-family: Georgia, "Times New Roman", Times, serif;
+                            }
+
+                            .form-style-5 fieldset {
+                                border: none;
+                            }
+
+                            .form-style-5 legend {
+                                font-size: 1.4em;
+                                margin-bottom: 10px;
+                            }
+
+                            .form-style-5 label {
+                                display: block;
+                                margin-bottom: 8px;
+                            }
+
+                            .form-style-5 input[type="text"],
+                            .form-style-5 input[type="date"],
+                            .form-style-5 input[type="datetime"],
+                            .form-style-5 input[type="email"],
+                            .form-style-5 input[type="number"],
+                            .form-style-5 input[type="search"],
+                            .form-style-5 input[type="time"],
+                            .form-style-5 input[type="url"],
+                            .form-style-5 textarea,
+                            .form-style-5 select {
+                                font-family: Georgia, "Times New Roman", Times, serif;
+                                background: rgba(255, 255, 255, .1);
+                                border: none;
+                                border-radius: 4px;
+                                font-size: 15px;
+                                margin: 0;
+                                outline: 0;
+                                padding: 10px;
+                                width: 100%;
+                                box-sizing: border-box;
+                                -webkit-box-sizing: border-box;
+                                -moz-box-sizing: border-box;
+                                background-color: #e8eeef;
+                                color: #8a97a0;
+                                -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+                                box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+                                margin-bottom: 30px;
+                            }
+
+                            .form-style-5 input[type="text"]:focus,
+                            .form-style-5 input[type="date"]:focus,
+                            .form-style-5 input[type="datetime"]:focus,
+                            .form-style-5 input[type="email"]:focus,
+                            .form-style-5 input[type="number"]:focus,
+                            .form-style-5 input[type="search"]:focus,
+                            .form-style-5 input[type="time"]:focus,
+                            .form-style-5 input[type="url"]:focus,
+                            .form-style-5 textarea:focus,
+                            .form-style-5 select:focus {
+                                background: #d2d9dd;
+                            }
+
+                            .form-style-5 select {
+                                -webkit-appearance: menulist-button;
+                                height: 35px;
+                            }
+
+                            .form-style-5 .number {
+                                background: pink;
+                                color: #fff;
+                                height: 30px;
+                                width: 30px;
+                                display: inline-block;
+                                font-size: 0.8em;
+                                margin-right: 4px;
+                                line-height: 30px;
+                                text-align: center;
+                                text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+                                border-radius: 15px 15px 15px 0px;
+                            }
+
+                            .form-style-5 input[type="submit"],
+                            .form-style-5 input[type="button"] {
+                                position: relative;
+                                display: block;
+                                padding: 19px 39px 18px 39px;
+                                color: #FFF;
+                                margin: 0 auto;
+                                background: pink;
+                                font-size: 18px;
+                                text-align: center;
+                                font-style: normal;
+                                width: 100%;
+                                border: 1px solid pink;
+                                border-width: 1px 1px 3px;
+                                margin-bottom: 10px;
+                            }
+
+                            .form-style-5 input[type="submit"]:hover,
+                            .form-style-5 input[type="button"]:hover {
+                                background:pink;
+                            }
+                        </style>
+                    </article>
+                </section>
+                <p class="lead">
+                        <h3>
+                            <li>Agrega las tareas que realizaras.</li>
+                            <li>Revisa como va la organizacion de tu boda.</li>
+                        </h3>
+                    </p>
+                    <br><br>
+                    <h3><strong>Nota muy importante</strong></h3>
+                    <p class="lead">
+                        ¡No olvides marcar aquellas tareas que ya cumpliste!!!
+                    </p>
+                <script type="text/javascript">
+                    function signup() {
+                        var nombreTarea = document.getElementById("nombreTarea").value;
+                        var fecha = document.getElementById("fecha").value;
+                        db.collection("tarea").add({
+                            nombreTarea: nombreTarea,
+                            fecha: fecha,
+                        })
+                            .then(function (docRef) {
+                                console.log("Document written with ID: ", docRef.id);
+                            })
+                            .catch(function (error) {
+                                console.error("Error adding document: ", error);
+                            });
+                    }
+                </script>
+                <!--======================================== General ========================================-->
+                <article class="full-reset" id="b-general">
+                    <div class="page-header" style="margin-bottom:40px;">
+                        <h2><i class="fa fa-calculator"></i> &nbsp; General</h2>
+                    </div>
+                    <figure>
+                        <img src="assets/img/Banner_bachillerato_general.png" alt="bachillerato general"
+                            class="img-responsive img-rounded center-box">
+                    </figure>
+                    <br>
+                    <p class="lead">
+                        Aqui puede ver los dias disponibles en su agenda.
+                    </p>
+                </article>
+
+                <!--======================================== Tareas recientes ========================================-->
+                <article class="full-reset" id="b-contador">
+                    <div class="page-header" style="margin-bottom:40px;">
+                        <h2><i class="fa fa-desktop"></i> &nbsp; Tareas recientes</h2>
+                    </div>
+
+                    <script language="javascript">
+                        //define el onjeto contacto
+                        function contacto() {
+                            this.nombre = "";
+                            this.contac = "";
+                        }
+
+                        //para almacenar contacto
+                        var contactos = new Array();
+
+                        function gi(id) {
+                            return document.getElementById(id);
+                        }
+                        function agregarContacto() {
+                            gi("divFormulario").style.display = 'inline';
+                            gi('txtNombre').focus();
+                        }
+                        function ocultarForm() {
+                            gi('txtNombre').value = '';
+                            gi('txtEmail').value = '';
+                            gi("divFormulario").style.display = 'none';
+                        }
+                        function guardar() {
+                            con = new contacto();
+                            con.nombre = gi('txtNombre').value;
+                            con.contac = gi('txtEmail').value;
+                            contactos[contactos.length] = con;
+                            ocultarForm();
+                            mostrarContactos();
+                        }
+                        function borrarConf(id_contacto) {
+                            if (confirm("¿Esta seguro de borrar esta tarea?")) {
+                                borrar(id_contacto);
+                            }
+                        }
+                        function borrar(id_contacto) {
+
+                            newCon = new Array();
+                            for (x = 0; x < contactos.length; x++) {
+                                if (x != id_contacto) {
+                                    newCon[newCon.length] = contactos[x];
+                                }
+                            }
+                            contactos = newCon;
+                            mostrarContactos();
+
+                        }
+                        function editar(id_contacto) {
+                            con = contactos[id_contacto];
+                            borrar(id_contacto);
+                            agregarContacto();
+                            gi('txtNombre').value = con.nombre;
+                            gi('txtEmail').value = con.contac;
+                        }
+                        function mostrarContactos() {
+                            gi('todosLosContactos').innerHTML = '';
+                            for (x = 0; x < contactos.length; x++) {
+                                con = contactos[x];
+                                div = document.createElement('div');
+                                div.setAttribute('class', 'contacto');
+                                div.innerHTML = "<b>Tarea: </b>" + con.nombre + "<br/>" + "<b>Contacto: </b>" + con.contac + "<br/>" + "</br>" + "<button onclick='editar(" + x + ")' >Editar</button><button onclick='borrarConf(" + x + ");'>Borrar</button>";
+                                gi('todosLosContactos').appendChild(div);
+                            }
+                        }
+                    </script>
+                    <div id="Panel_Acciones">
+                        <button onclick="agregarContacto();"
+                            style="border-radius: 10px; background-color: #f18a9b; color:blanchedalmond; padding: 10px;">Agregar
+                            Tarea</button>
+                    </div>
+                    <h4></h4>
+                    <div id="divFormulario" style="display: none;">
+                        <table>
+                            <tr>
+                                <th>Nombre Actividad:</th>
+                                <td><input type="text" id="txtNombre">
+                                    <h3></h3>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th>Contacto de la Actividad:</th>
+                                <td><input type="text" id="txtEmail"></td>
+                            </tr>
+                            <tr>
+                                <td colspan="5" align="center">
+                                    <h3></h3>
+                                    <button onclick="guardar();"
+                                        style="border-radius: 10px; background-color: #f18a9b; color:blanchedalmond; padding: 10px;">Guardar</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <fieldset>
+                        <legend>Tareas Existentes</legend>
+                        <div id="todosLosContactos"></div>
+                    </fieldset>
+                </article>
+
+
+                <!--======================================== Tareas pendientes ========================================-->
+                <article class="full-reset" id="b-electro">
+                    <div class="page-header" style="margin-bottom:40px;">
+                        <h2><i class="fa fa-desktop"></i> &nbsp; Tareas pendientes</h2>
+                    </div>
+                </article>
+                <!--======================================== Tareas realizadas ========================================-->
+                <article class="full-reset" id="b-informatica">
+                    <div class="page-header" style="margin-bottom:40px;">
+                        <h2><i class="fa fa-desktop"></i> &nbsp; Tareas realizadas </h2>
+                    </div>
+                    <figure>
+                        <img src="assets/img/Banner_bachillerato_informatica.png" alt="bachillerato informatica"
+                            class="img-responsive img-rounded center-box">
+                    </figure>
+
+                </article>
+    </section>
+
+    <!--======================================== Pie de pagina ========================================-->
+    <footer class="full-reset footer">
+        <div class="full-reset" style="padding: 15px 0;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-4">
+                        <h4 class="titles text-center">Visitenos en</h4>
+                        <p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h4 class="titles text-center">Contactenos</h4>
+                        <p class="text-center">Tele-Fax: +(000)0000-0000 <br>Correo Electrónico:
+                            correo@hotmail.com</p>
+                    </div>
+                    <div class="col-xs-12 col-sm-4">
+                        <h4 class="titles subtitles-footer">Siguenos en</h4>
+                        <ul class="list-unstyled links-footer">
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-facebook"></i> &nbsp;
+                                    Facebook</a></li>
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-twitter"></i> &nbsp;
+                                    Twitter</a></li>
+                            <li><a href="#!" class="open-link-newTab"><i class="fa fa-google-plus"></i>
+                                    &nbsp; Google+</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-xs-12">
+                        <div class="full-reset footer-copyright"><i class="fa fa-copyright"></i> 2016 Carlos
+                            Alfaro</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
